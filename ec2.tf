@@ -16,9 +16,9 @@ resource "aws_instance" "server" {
 resource "aws_ebs_volume" "ebs" {
   availability_zone = aws_instance.server.availability_zone
   size              = 20 // size in GB
-    tags = {
-        Name = "Terraform-EBS-Volume"
-    }
+  tags = {
+    Name = "Terraform-EBS-Volume"
+  }
 }
 resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/sdf"
